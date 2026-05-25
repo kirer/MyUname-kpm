@@ -34,6 +34,9 @@ jobs:
         id: cache-deps
         uses: actions/cache@v4
         with:
+          path: |
+            toolchain
+            KernelPatch
           key: kpdeps-v3-${{ env.TOOLCHAIN_VERSION }}-${{ hashFiles('.github/workflows/build.yml') }}
           restore-keys: |
             kpdeps-v3-${{ env.TOOLCHAIN_VERSION }}-
